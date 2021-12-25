@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Snake</title>
+	</head>
+	<body>
+		<div id="form" style="border: 2px solid black; border-radius: 8px; padding: 5px;">
+			<label for="height">
+				<span>Tamaño:</span>
+				<input id="height" type="number" value="20" min="9" />
+			</label>
+			<label for="width">
+				<span>x</span>
+				<input id="width" type="number" value="20" min="9" />
+			</label>
+			<br>
+			<label for="speed">
+				<span>Velocidad (más alto es más lento)</span>
+				<input id="speed" type="number" value="30" min="0" />
+			</label>
+			<br>
+			<label for="walls">
+				<input id="walls" type="checkbox" checked>
+				<span>Incluir paredes</span>
+			</label>
+			<br>
+			<button type="button" id="start_board">Comenzar</button>
+			<button type="button" id="view_scores">Ver puntajes</button>
+		</div>
+
+		<div hidden id="score_board" style="border: 2px solid black; border-radius: 8px; padding: 5px;">
+			<div id="score_entries"></div>
+			<button id="return_to_main">Volver</button>
+			<button id="remove_all_scores">Borrar los puntajes</button>
+		</div>
+
+		<div id="the_game" hidden style="letter-spacing: -4.5px; line-height: 17px; font-family: console">
+			<div id="snake">
+				<script type="module" src="snake.js"></script>
+			</div>
+			<div id="score" style="display: flex"></div>
+		</div>
+		<div id="debug" hidden>
+			<span>Pressed: </span><span id="key_pressed"></span><br />
+			<span>Snake direction: </span><span id="snake_dir"></span><br />
+			<span>Points: </span><span id="points"></span>
+		</div>
+	</body>
+</html>
